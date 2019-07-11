@@ -1,0 +1,17 @@
+{
+  "name": "k-mcd-collateral",
+  "src": {
+    "specification": "src/collateral.md",
+    "smt_prelude": "src/prelude.smt2.md",
+    "rules": [
+      "src/storage.k.md",
+      "src/lemmas.k.md"
+    ]
+  },
+  "implementations": {
+    "PausableToken": {
+      "solc_output": "collateral/out/wbtc.sol.json"
+    }
+  },
+  "dapp_root": "collateral"
+}
