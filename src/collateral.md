@@ -1,6 +1,6 @@
 ```act
 behaviour transferFrom of PausableToken
-interface function transferFrom(address from, address to, uint256 value)
+interface transferFrom(address from, address to, uint256 value)
 
 types
   Approval : uint256
