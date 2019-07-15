@@ -14,6 +14,7 @@ storage
 
 iff in range uint256
   FromBal - value
+  ToBal + value
   Approval - value
 
 iff
@@ -28,7 +29,26 @@ returns 1
 
 ```act
 behaviour transfer of PausableToken
-interface function transfer(address to, uint256 value)
+interface transfer(address to, uint256 value)
 
+types
+  FromBal : uint256
+  ToBal   : uint256
 
-````
+storage
+  balances[CALLER_ID] |-> FromBal => FromBal - value
+  balances[to]        |-> ToBal => ToBal + value
+
+iff in range uint256
+  FromBal - value
+  ToBal + value
+
+iff
+  VCallValue == 0
+  to =/= 0
+
+if 
+  CALLER_ID =/= to
+
+returns 1 
+```
