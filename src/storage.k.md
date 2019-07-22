@@ -6,6 +6,9 @@ rule pow8    => 256     [macro]
 rule pow16   => 65536   [macro]
 rule pow80   => 1208925819614629174706176 [macro]
 
+syntax Int ::= "#PausableToken.paused_filler_fillerr_fillerrr"
+rule #PausableToken.paused_filler_fillerr_fillerrr => 3
+
 syntax Int ::= "#PausableToken.balances" "[" Int "]" [function]
 rule #PausableToken.balances[A] => #hashedLocation("Solidity", 0, A)
 
