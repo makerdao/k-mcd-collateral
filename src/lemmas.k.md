@@ -1,12 +1,12 @@
 ```k
-rule (P *Int pow176 +Int Q *Int pow168 +Int X *Int pow160 +Int A) /Int pow160 => P *Int pow16 +Int Q *Int pow8 +Int X
-  requires #rangeBool(P)
-  andBool #rangeBool(Q)
-  andBool #rangeUInt(8, X)
+rule (X *Int pow176 +Int Y *Int pow168 +Int Z *Int pow160 +Int A) /Int pow160 => X *Int pow16 +Int Y *Int pow8 +Int Z
+  requires #rangeUInt(8, X)
+  andBool #rangeUInt(8, Y)
+  andBool #rangeUInt(8, Z)
   andBool #rangeAddress(A)
 
-rule 255 &Int (P *Int pow16 +Int Q *Int pow8 +Int X) => X
-  requires #rangeBool(P)
-  andBool #rangeBool(Q)
-  andBool #rangeUInt(8, X)
+rule 255 &Int (X *Int pow16 +Int Y *Int pow8 +Int Z) => Z
+  requires #rangeUInt(8, X)
+  andBool #rangeUInt(8, Y)
+  andBool #rangeUInt(8, Z)
 ```

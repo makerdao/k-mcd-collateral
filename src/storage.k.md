@@ -17,10 +17,10 @@ rule #PausableToken.approvals[A][B] => #hashedLocation("Solidity", 2, A B)
 syntax Int ::= "#PausableToken.paused_filler_fillerr_fillerrr" [function]
 rule #PausableToken.paused_filler_fillerr_fillerrr => 3
 
-syntax Int ::= "#WordPackBoolBoolUInt8Addr" "(" Int "," Int "," Int "," Int ")" [function]
-rule #WordPackBoolBoolUInt8Addr(P, Q, X, A) => P *Int pow176 +Int Q *Int pow168 +Int X *Int pow160 +Int A
-  requires #rangeBool(P)
-  andBool #rangeBool(Q)
-  andBool #rangeUInt(8, X)
+syntax Int ::= "#WordPackUInt8UInt8UInt8Addr" "(" Int "," Int "," Int "," Int ")" [function]
+rule #WordPackBoolBoolUInt8Addr(X, Y, Z, A) => X *Int pow176 +Int Y *Int pow168 +Int Z *Int pow160 +Int A
+  requires #rangeUInt(8, X)
+  andBool #rangeUInt(8, Y)
+  andBool #rangeUInt(8, Z)
   andBool #rangeAddress(A)
 ```
