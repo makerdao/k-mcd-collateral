@@ -10,7 +10,7 @@
   },
   "implementations": {
     "PausableToken": {
-      "solc_output": "collateral/out/wbtc.sol.json"
+      "src": "src/wbtc.sol"
     }
   },
   "dapp_root": "collateral"
