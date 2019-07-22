@@ -6,10 +6,10 @@ types
   Approval : uint256
   FromBal  : uint256
   ToBal    : uint256
-  Paused   : boolean
+  Paused   : bool
   Filler   : address
   Fillerr  : uint8
-  Fillerrr : boolean
+  Fillerrr : bool
 
 storage
   balances[from]             |-> FromBal => FromBal - value
