@@ -12,8 +12,8 @@ rule #PausableToken.balances[A] => #hashedLocation("Solidity", 0, A)
 syntax Int ::= "#PausableToken.approvals" "[" Int "]" "[" Int "]" [function]
 rule #PausableToken.approvals[A][B] => #hashedLocation("Solidity", 2, A B)
 
-syntax Int ::= "#PausableToken.paused_filler_fillerr_fillerrr" [function]
-rule #PausableToken.paused_filler_fillerr_fillerrr => 3
+syntax Int ::= "#PausableToken.filler_paused_fillerr_fillerrr" [function]
+rule #PausableToken.filler_paused_fillerr_fillerrr => 3
 
 syntax Int ::= "#WordPackUInt8UInt8UInt8Addr" "(" Int "," Int "," Int "," Int ")" [function]
 rule #WordPackUInt8UInt8UInt8Addr(X, Y, Z, A) => X *Int pow176 +Int Y *Int pow168 +Int Z *Int pow160 +Int A

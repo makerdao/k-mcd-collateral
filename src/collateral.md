@@ -6,16 +6,16 @@ types
   Approval : uint256
   FromBal  : uint256
   ToBal    : uint256
-  Paused   : bool
-  Filler   : address
+  Paused   : uint8
+  Filler   : uint8
   Fillerr  : uint8
-  Fillerrr : bool
+  Fillerrr : address
 
 storage
   balances[from]             |-> FromBal => FromBal - value
   balances[to]               |-> ToBal => ToBal - value
   approvals[from][CALLER_ID] |-> Approval => Approval - value
-  paused_filler_fillerr_fillerrr |-> #WordPackUInt8UInt8UInt8Addr(Paused, Fillerrr, Fillerr, Filler)
+  filler_paused_fillerr_fillerrr |-> #WordPackUInt8UInt8UInt8Addr(Filler, Paused, Fillerr, Fillerrr)
 
 iff in range uint256
   FromBal - value
