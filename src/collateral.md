@@ -15,7 +15,7 @@ storage
   balances[from]             |-> FromBal => FromBal - value
   balances[to]               |-> ToBal => ToBal - value
   approvals[from][CALLER_ID] |-> Approval => Approval - value
-  filler_paused_fillerr_fillerrr |-> #WordPackUInt8UInt8UInt8Addr(Filler, Paused, Fillerr, Fillerrr)
+  filler_fillerr_paused_fillerrr |-> #WordPackUInt8UInt8UInt8Addr(Filler, Fillerr, Paused, Fillerrr)
 
 iff in range uint256
   FromBal - value
