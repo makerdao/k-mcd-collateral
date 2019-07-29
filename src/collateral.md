@@ -13,7 +13,7 @@ types
 
 storage
   balances[from]             |-> FromBal => FromBal - value
-  balances[to]               |-> ToBal => ToBal - value
+  balances[to]               |-> ToBal => ToBal + value
   approvals[from][CALLER_ID] |-> Approval => Approval - value
   filler_fillerr_paused_fillerrr |-> #WordPackUInt8UInt8UInt8Addr(Filler, Fillerr, Paused, Fillerrr)
 
@@ -40,16 +40,22 @@ interface transfer(address to, uint256 value)
 types
   FromBal : uint256
   ToBal   : uint256
+  Paused   : uint8
+  Filler   : uint8
+  Fillerr  : uint8
+  Fillerrr : address
 
 storage
   balances[CALLER_ID] |-> FromBal => FromBal - value
   balances[to]        |-> ToBal => ToBal + value
+  filler_fillerr_paused_fillerrr |-> #WordPackUInt8UInt8UInt8Addr(Filler, Fillerr, Paused, Fillerrr)
 
 iff in range uint256
   FromBal - value
   ToBal + value
 
 iff
+  Paused == 0
   VCallValue == 0
   to =/= 0
 
